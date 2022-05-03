@@ -17,6 +17,7 @@ build/
 bin/
 build/
 Data_objects/
+applogs/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
