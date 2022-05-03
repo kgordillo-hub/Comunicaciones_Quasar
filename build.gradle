@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.alianza'
 version = '1.0.0'
-sourceCompatibility = '14'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
