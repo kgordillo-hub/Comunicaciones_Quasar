@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'communications-quasar-meli'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d84db4c3ea2542bba78aba384c4d0cd4 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_2E22256A1C8548F8B0E2DEB954E5FF00 }}
           package: '*.jar'
