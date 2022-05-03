@@ -15,6 +15,7 @@ build/
 .sts4-cache
 .gradle
 bin/
+build/
 Data_objects/
 applogs/
 !**/src/main/**/bin/
