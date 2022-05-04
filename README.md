@@ -6,8 +6,8 @@
 * [Introducción](#introducción)
   * [Reglas de negocio](#reglas-de-negocio)
 * [Arquitectura de la aplicación](#arquitectura-de-la-aplicación)
-  * [Modelo funcional](#vista-funcional)
-  * [Modelo estructural](#vista-estructural)
+  * [Modelo funcional](#modelo-funcional)
+  * [Modelo estructural](#modelo-estructural)
   * [Diseño general](#diseño-general)
 * [Pruebas](#pruebas)
 * [Servicio web](#servicio-web)
@@ -39,3 +39,25 @@ Ya que se trata de una aplicación sencilla, sólamente se provee el modelo func
 En el siguiente diagrama se ilustran las funcionalidades a las que tiene acceso el usuario (nave):
 
 ![Screenshot](https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/Casos_uso_Quasar.PNG)
+
+### Modelo estructural
+
+A continuación se presenta el diagrama de clases.
+
+![Screenshot](https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/Clases_Quasar.PNG)
+
+El diagrama de paquetes se muestra a continuación:
+
+![Screenshot](https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/Paquetes_Quasar.PNG)
+
+Por otro lado, el diagrama de despliegue es muy sencillo ya que se decidió desplegar en una aplicación web de Azure.
+
+![Screenshot](https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/Despliegue_Quasar.PNG)
+
+### Diseño general
+
+La aplicación fue desplegada en Azure utilizando el servicio de integración continua de Azure. Conectando con este repositorio de Github.
+
+![Screenshot](https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/Design-Quasar.png)
+
+## Pruebas
