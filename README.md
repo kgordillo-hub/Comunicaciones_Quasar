@@ -63,3 +63,100 @@ La aplicación fue desplegada en Azure utilizando el servicio de integración co
 ![Screenshot](https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/Design-Quasar.png)
 
 ## Pruebas
+
+Se realizaron pruebas unitarias a todo el código y se verificó el cubrimiento de la mayoría de casos de prueba utilizando Jacoco para generar el reporte.
+
+![Screenshot](https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/Coverage_testing.PNG)
+
+Como se observa, se logró un 92% del cubrimiento del código. El otro 8%, corresponde a casos de prueba que involucran operaciones de IO y que por su naturaleza son complicados de replicar utilizando Spring testing.
+
+## Servicio web
+
+La aplicación fue desplegada en Azure, a continuación se presentan los endpoint:
+
+### Endpoints
+
+Endpoint de auto descripción del servicio. En este mismo endpoint se pueden realizar pruebas:
+```
+https://communications-quasar-meli.azurewebsites.net/api/swagger-ui/index.html
+```
+
+Endpoint para obtener posición de la nave y mensaje. Recibe la lista completa de mensajes y distancias:
+```
+https://communications-quasar-meli.azurewebsites.net/api/topsecret
+```
+Ejemplo de petición:
+```
+POST: https://communications-quasar-meli.azurewebsites.net/api/topsecret
+
+{
+	"satellites": [
+		{
+			"name": "kenobi",
+			"distance": 100.0,
+			"message": [
+				"",
+				"",
+				"",
+				"mensaje",
+				""
+			]
+		},
+		{
+			"name": "skywalker",
+			"distance": 115.5,
+			"message": [
+				"",
+				"es",
+				"",
+				"",
+				"secreto"
+			]
+		},
+		{
+			"name": "sato",
+			"distance": 142.7,
+			"message": [
+				"este",
+				"",
+				"un",
+				"",
+				""
+			]
+		}
+	]
+}
+```
+
+
+
+Endpoint para recibir por separado la información (POST):
+```
+https://communications-quasar-meli.azurewebsites.net/api/topsecret_split/{satellineName}
+```
+
+Ejemplo de petición:
+```
+POST: https://communications-quasar-meli.azurewebsites.net/api/topsecret_split/sato
+{
+	"distance": 142.7,
+	"message": [
+		"este",
+		"",
+		"un",
+		"",
+		""
+	]
+}
+```
+
+Endpoint para recibir por separado la información (GET):
+```
+https://communications-quasar-meli.azurewebsites.net/api/topsecret_split/{satellineName}
+```
+
+Ejemplo de petición:
+```
+GET: https://communications-quasar-meli.azurewebsites.net/api/topsecret_split/sato?distance=100.0&message=,,un,,
+
+```
