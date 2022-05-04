@@ -1,3 +1,5 @@
+<img align="left" width="90" height="90" src="https://github.com/kgordillo-hub/Comunicaciones_Quasar/blob/master/images/rebel.png" alt="Resume application project app icon">
+
 # MELI - Operación fuego de Quasar
 
 
