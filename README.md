@@ -160,3 +160,55 @@ Ejemplo de petición:
 GET: https://communications-quasar-meli.azurewebsites.net/api/topsecret_split/sato?distance=100.0&message=,,un,,
 
 ```
+### Mensajes de error
+
+A continuación se presenta una tabla con los códigos HTTP y el mensajes de respuesta a las diferentes peticiones. Si existe alguna violación a una regla de negocio, se retornará un código de error 404 (not found) con alguno de los mensajes mencionados.
+
+HTTP code|Message
+:---:|---
+200|Ok
+404|Distances to Satellite are null or not equal to the number of satellites to hit.|
+404|Satellite with name '{satellite}' was not found in server's configuration.|
+404|The Satellite name can not be null, please provide all the satellite names in the request.|
+404|You are calling the end point to '{satellite}' satellite. Please remove the satellite name from the request.|
+404|Is not possible to determine the message. The message from each Satellite does not have the same length.|
+404|Is not possible to determine the message. There is one word that is different in at least two arrays at position: {pos}.|
+404|Is not possible to determine the message. The word is empty in all arrays at position: {pos}.|
+404|Please provide the message in the correct format (comma separated). Example: message=,es,un,mensaje.|
+404|There can not be null words in the message. If null, please replace by empty string.|
+404|Is not possible to reconstruct the message or get the spaceship's position as this service has not received enough information regarding the other satellites.|
+500|System error, please contact the administrator.|
+
+## Ejecución
+
+Para ejecutar la aplicación localmente se deben seguir los siguientes pasos:
+
+### Requisitos
+
+* Tener [gradle](https://gradle.org/)
+* Tener [JDK 11](https://www.oracle.com/co/java/technologies/javase/jdk11-archive-downloads.html) o superior
+
+### Corriendo el programa
+
+Primero, clonar el repositorio en un folder local:
+```shell
+git clone https://github.com/kgordillo-hub/Comunicaciones_Quasar.git
+```
+
+Segundo, entrar al folder: Comunicaciones_Quasar, abrir una terminal (cmd) y ejecutar:
+
+```shell
+./gradlew clean build
+```
+
+Tercero, una vez haya terminado la ejecución de la instrucción anterior, ejecutar:
+
+```shell
+./gradlew bootRun
+```
+
+Una vez hecho esto, ya se puede probar la aplicación. Por defecto, la aplicación corre sobre el puerto 8080, para revisar la auto descripción del servicio y probar, se puede acceder a:
+
+```
+http://localhost:8080/api/swagger-ui/index.html
+```
